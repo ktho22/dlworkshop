@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import os
 
+os.system("jupyter notebook --generate-config")
+
 if os.path.isdir("$HOME/.jupyter/profile_nbserver")is False:
     os.system("ipython profile create nbserver")
 else: 
