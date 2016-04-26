@@ -26,16 +26,16 @@ RUN apt-get update && apt-get install -y \
   python-zmq \
   python-pip
 
-# Install Jupyter Notebook for iTorch
-RUN pip install notebook ipywidgets
-
 # Run Torch7 installation scripts
 RUN git clone https://github.com/torch/distro.git /root/torch --recursive && cd /root/torch && \
-  bash install-deps && \
-  ./install.sh
+  bash install-deps && ./install.sh
+
+# Install Jupyter Notebook for iTorch
+RUN pip install jupyter
+RUN pip install notebook ipywidgets
+RUN /root/torch/install/bin/luarocks install itorch
 
 RUN git clone https://github.com/ktho22/dlworkshop.git /root/dlworkshop
-
 RUN jupyter notebook --generate-config
 
 WORKDIR /root/dlworkshop
