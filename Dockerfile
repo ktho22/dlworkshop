@@ -36,3 +36,6 @@ RUN git clone https://github.com/ktho22/dlworkshop.git /root/dlworkshop
 RUN jupyter notebook --generate-config
 
 WORKDIR /root/dlworkshop
+RUN /bin/sh /root/caffe/data/mnist/get_mnist.sh
+RUN /usr/bin/python /root/caffe/scripts/download_model_binary.py /root/caffe/models/bvlc_reference_caffenet
+RUN /bin/sh /root/caffe/data/ilsvrc12/get_ilsvrc_aux.sh
