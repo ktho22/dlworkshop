@@ -2,7 +2,7 @@ config_str = """
 c = get_config()
 c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False
-c.NotebookApp.port = 8888
+c.NotebookApp.port = 9999
 """
 
 import os
