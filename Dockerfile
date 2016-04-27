@@ -15,6 +15,7 @@ ENV PYTHONPATH=/root/caffe/python:$PYTHONPATH
 
 # Install git, apt-add-repository and dependencies for iTorch
 RUN apt-get update && apt-get install -y \
+  unzip \
   wget \
   git \
   software-properties-common \
@@ -40,3 +41,5 @@ RUN /bin/sh /root/caffe/data/mnist/get_mnist.sh
 RUN /usr/bin/python /root/caffe/scripts/download_model_binary.py /root/caffe/models/bvlc_reference_caffenet
 RUN /bin/sh /root/caffe/data/ilsvrc12/get_ilsvrc_aux.sh
 RUN /bin/ln /dev/null /dev/raw1394
+RUN /usr/bin/wget -c https://s3.amazonaws.com/torch7/data/cifar10torchsmall.zip
+RUN /usr/bin/unzip cifar10torchsmall.zip
