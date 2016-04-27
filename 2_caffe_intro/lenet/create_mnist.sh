@@ -2,9 +2,9 @@
 # This script converts the mnist data into lmdb/leveldb format,
 # depending on the value assigned to $BACKEND.
 
-EXAMPLE=./
-DATA=../caffe/data/mnist
-BUILD=../caffe/build/examples/mnist
+EXAMPLE=./lenet
+DATA=../../caffe/data/mnist
+BUILD=../../caffe/build/examples/mnist
 
 BACKEND="lmdb"
 
