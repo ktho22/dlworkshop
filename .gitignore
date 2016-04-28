@@ -1,1 +1,4 @@
 *lmdb
+.ipynb_checkpoints
+*.t7
+*.zip
